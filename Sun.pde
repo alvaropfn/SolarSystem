@@ -1,36 +1,34 @@
-public class Sun extends Body
+public class Sun extends Body implements HasOrbit
 {
-    ArrayList<Planet> planets;
+    ArrayList<Orbital> planets;
     
     public Sun(float r)
     {
         super(r, r);
-        planets = new ArrayList<Planet>();
+        planets = new ArrayList<Orbital>();
         this.c = color(200, random(120,200), 50);
     }
     
-    public void addPlanets(ArrayList<Planet> income)
+    public void addToOrbit(ArrayList<Orbital> os)
     {
-        for(Planet p : income)
-            addPlanets(p);
+        for(Orbital o : os)
+            addToOrbit(o);
     }
-    
-    public void addPlanets(Planet p)
+
+    public void addToOrbit(Orbital o)
     {
-        planets.add(p);
+        planets.add(o);
     }
      
-    public void rotate()
+    public void mov()
     {
         this.px = mouseX;
         this.py = mouseY;
         
-        for(Planet p : planets)
+        for(Orbital o : planets)
         {
-            p.rotate((Body)this);
-            p.see();
+            o.rotate((Body)this);
+            o.see();
         }
     }
-    
-    
 }

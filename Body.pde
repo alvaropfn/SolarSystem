@@ -22,13 +22,5 @@ public abstract class Body
     public float getPy()
     {return this.py;}
     
-    public void setPx(float px)
-    {this.px = px;}
-    
-    public void setPy(float py)
-    {this.py = py;}
-    
-    
-    
 }
     
