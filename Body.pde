@@ -23,4 +23,3 @@ public abstract class Body
     {return this.py;}
     
 }
-    
